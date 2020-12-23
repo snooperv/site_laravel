@@ -9,11 +9,6 @@ use App\Models\User;
 
 class FilterController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth')->except('users');
-    }
-
     public function my()
     {
         $posts = Post::select('posts.*', 'users.name as author')

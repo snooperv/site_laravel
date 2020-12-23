@@ -26,7 +26,7 @@ Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('post.edit')
 Route::patch('post/update/{id}', [PostController::class, 'update'])->name('post.update');
 Route::delete('post/destroy/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 
-Route::get('my', [FilterController::class, 'my'])->name('my');
+Route::get('my', [FilterController::class, 'my'])->name('my')->middleware('auth');
 Route::get('users', [FilterController::class, 'users'])->name('users');
 Route::get('posts/{id}/{name}', [FilterController::class, 'userPosts'])->name('posts');
 
